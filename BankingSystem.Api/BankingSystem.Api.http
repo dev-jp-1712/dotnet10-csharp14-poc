@@ -1,0 +1,53 @@
+@BankingSystem.Api_HostAddress = http://localhost:5050
+
+### Open API Documentation UI (Scalar)
+### Visit in browser: http://localhost:5050/scalar/v1
+
+### Get OpenAPI JSON document
+GET {{BankingSystem.Api_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+### Get root endpoint
+GET {{BankingSystem.Api_HostAddress}}/
+Accept: application/json
+
+### Get all accounts
+GET {{BankingSystem.Api_HostAddress}}/api/accounts
+Accept: application/json
+
+### Create a new account
+POST {{BankingSystem.Api_HostAddress}}/api/accounts
+Content-Type: application/json
+
+{
+  "accountNumber": "ACC001",
+  "accountHolder": "John Doe",
+  "initialBalance": 1000.00
+}
+
+### Get account by ID
+GET {{BankingSystem.Api_HostAddress}}/api/accounts/1
+Accept: application/json
+
+### Deposit to account
+POST {{BankingSystem.Api_HostAddress}}/api/accounts/1/deposit
+Content-Type: application/json
+
+{
+  "amount": 500.00
+}
+
+### Withdraw from account
+POST {{BankingSystem.Api_HostAddress}}/api/accounts/1/withdraw
+Content-Type: application/json
+
+{
+  "amount": 200.00
+}
+
+### Health check
+GET {{BankingSystem.Api_HostAddress}}/health
+Accept: application/json
+
+###
+
